@@ -24,6 +24,9 @@ export default function Home() {
           />
           <h1>Transform Your Body, Transform Your Life.</h1>
         </section>
+        <section>
+          <p>Meet Wendy: Your Dedicated & Creative Personal Trainer. Tailoring workouts to your unique needs, she brings a diverse skillset to every session. Let her guide you on a transformative fitness journey.</p>
+        </section>
       </main>
     </>
   )
