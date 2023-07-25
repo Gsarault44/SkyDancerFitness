@@ -36,11 +36,9 @@ button.button {
 }
 
 .header {
-  position: absolute;
   padding: 0 1.5rem;
   width: 100%;
-  z-index: 999;
-  position: fixed;
+  
   background-color: #000;
   @media all and (min-width: 575px) {
 
@@ -65,7 +63,7 @@ button.button {
 
   nav  {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     overflow: hidden;

@@ -12,9 +12,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="home fitness">
-        <div>
-          <h1>Fitness Website</h1>
-        </div>
+        <section className="hero">
+          <Image
+            src="/scissor-jump-no-shoelace.jpg"
+            alt="scissor-jump-no-shoelace"
+            width={0}
+            height={0}
+            priority
+            sizes='100vw'
+            style={{ width: '100%', height: '100vh', objectFit: 'cover' }}
+          />
+          <h1>Transform Your Body, Transform Your Life.</h1>
+        </section>
       </main>
     </>
   )

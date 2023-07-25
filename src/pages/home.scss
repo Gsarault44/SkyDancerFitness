@@ -1,3 +1,14 @@
 .home {
-
+  .hero {
+    position: relative;
+    h1 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
 }

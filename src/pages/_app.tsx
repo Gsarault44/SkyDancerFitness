@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import '@styles/app.scss';
@@ -6,50 +7,77 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 const inter = Nanum_Gothic({ weight: "400", subsets: ['latin'] })
-const pop = Poppins({ weight: "200", subsets: ['latin'] })
+const pop = Poppins({ weight: ["300", "500"], subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter();
   const router = useRouter();
+  const currentYear = new Date().getFullYear();  
+
+  const [menuStatus, setMenuStatus] = useState(false);
+
+  useEffect(() => {
+    setMenuStatus(false); // Close the navigation panel
+  }, [ pathname ]);
 
   return (
     <>
       <style jsx global>{`
-        html main * {
+        html nav * {
           font-family: ${inter.style.fontFamily};
         }
         html body * {
           font-family: ${pop.style.fontFamily};
+          font-weight: 200;
         }
       `}</style>
       <header className={`header ${router.pathname == '/' && 'home'}`}>
-      {router.pathname != '/' && <div>
-            
-            <nav>
-              <Link href="/fitness">
+        <div>
+          <div className="menu-button">
+            <Link href="/" className="logo">
+              <Image
+                src="/yoga-logo.png"
+                alt="Skydance Entertainment"
+                width={100}
+                height={50}
+                priority
+              />
+            </Link>
+            <Image
+              src={`${menuStatus ? '/close.svg' : '/menu-svgrepo-com.svg'}`}
+              alt='menu Icon'
+              onClick={() => setMenuStatus(!menuStatus)}
+              width={30}
+              height={30}
+            />
+          </div>
+          <nav className={`${menuStatus ? 'nav-open' : 'nav-closed'}`}>
+            <Link href="/" className="logo">
+              <Image
+                src="/yoga-logo.png"
+                alt="Skydance Entertainment"
+                width={200}
+                height={100}
+                priority
+              />
+            </Link>
+            <div>
+              <Link href="https://sky-dancer-fitness.vercel.app/">
                 Fitness
               </Link>
-              <Link href="https://sky-dancer.vercel.app/">
-                Dance
+              <Link href="https://sky-dancer.vercel.app/dance">
+                Entertainment
               </Link>
-              <Link href="https://sky-dancer-yoga.vercel.app/">
-                Yoga
-              </Link>
-            </nav>
-            <div className="head-logo">
-              <Link href="/">
-                <Image
-                  src="/logo.png"
-                  alt="Skydance Entertainment"
-                  width={250}
-                  height={100}
-                  priority
-                />
-              </Link>
-            </div>
-          </div>}
-        </header>
+              </div>
+          </nav>
+        </div>
+      </header>
       <Component {...pageProps} />
+      <footer>
+        <p>Copyright &copy; {currentYear} SkydancerEntertainment - All Rights Reserved.</p>
+      </footer>
     </>
   )
 }
