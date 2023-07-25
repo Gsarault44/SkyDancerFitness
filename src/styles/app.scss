@@ -1,0 +1,124 @@
+button.button {
+  appearance: none;
+  border: 1px solid #fff;
+  padding: 1rem;
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.23s ease-in-out;
+  box-shadow: 1px 1px 3px #fff;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 1px 1px 3px #000;
+  }
+}
+
+.head-logo {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 999;
+
+  img {
+    filter: grayscale(1) brightness(3.5);
+  }
+}
+
+.inner {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 3rem;
+}
+
+.header {
+  position: absolute;
+  padding: 0 1.5rem;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  background-color: #000;
+  @media all and (min-width: 575px) {
+
+    background-color: rgba(#000, 0.15);
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 99999;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    max-width: 95%;
+    @media all and (min-width: 575px) {
+      display: none;
+    }
+  }
+
+  nav  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media all and (min-width: 575px) {
+      flex-direction: row;
+      height: auto;
+    }
+
+    &.nav-open {
+      height: 100vh;
+      @media all and (min-width: 575px) {
+        height: auto;
+      }
+    }
+    &.nav-closed {
+      height: 0vh;
+      @media all and (min-width: 575px) {
+        height: auto;
+      }
+    }
+
+    .menu-button {
+      display: block;
+      @media all and (min-width: 575px) {
+        display: none;
+      }
+    }
+    a {
+      padding: 0.25rem 1rem;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid transparent;
+      background-color: transparent;
+      transition: all 0.34s ease-in-out;
+      color: #fff;
+
+      &:hover {
+        border-bottom: 1px solid #fff;
+      }
+    }
+    a.logo {
+      &:hover {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+footer {
+  padding: 1rem 0;
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+@import "../pages/*.scss";
