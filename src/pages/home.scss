@@ -12,4 +12,66 @@
       font-size: 42px;
     }
   }
+
+  .split-media {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    @media all and (min-width: 575px) {
+      flex-direction: row;
+      padding: 3rem 0;
+    }
+
+    > div,
+    > img  {
+      flex: 1 1 50%;
+    }
+
+    &__content {
+      padding: 1rem;
+      @media all and (min-width: 575px) {
+        padding: 2rem;
+      }
+      h2 {
+        font-size: 36px;
+        font-weight: bold;
+        @media all and (min-width: 575px) {
+          font-size: 56px;
+        }
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .testimonials {
+    background-color: #F3E4D8;
+    padding: 4rem 0;
+
+    .react-multi-carousel-list {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .react-multi-carousel-track  {
+    }
+
+    .react-multiple-carousel__arrow--right {
+      right: 0;
+    }
+    .react-multiple-carousel__arrow--left {
+      left: 0;
+    }
+
+    .react-multi-carousel-item {
+      blockquote {
+        margin: 0 5rem;
+      }
+    }
+  }
 }
