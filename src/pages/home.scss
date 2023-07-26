@@ -59,6 +59,9 @@
       max-width: 768px;
       margin: 0 auto;
     }
+    .react-multi-carousel-track {
+      align-items: center;
+    }
 
     .react-multiple-carousel__arrow--right {
       right: 0;
@@ -70,6 +73,10 @@
     .react-multi-carousel-item {
       blockquote {
         margin: 0 5rem;
+        font-size: 20px;
+        cite {
+          font-size: 18px;
+        }
       }
     }
   }
