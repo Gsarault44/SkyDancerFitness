@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <div className="menu-button">
             <Link href="/" className="logo">
               <Image
-                src="/yoga-logo.png"
+                src="/fitness.png"
                 alt="Skydance Entertainment"
                 width={100}
                 height={50}
