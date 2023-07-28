@@ -15,6 +15,11 @@ button.button {
   }
 }
 
+
+.logo img {
+  filter: grayscale(1) brightness(3.5);
+}
+
 .head-logo {
   position: absolute;
   top: 5px;

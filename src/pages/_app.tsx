@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Link href="/" className="logo">
               <Image
                 src="/fitness.png"
-                alt="Skydance Entertainment"
+                alt="Skydance Fitness"
                 width={100}
                 height={50}
                 priority
@@ -56,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <nav className={`${menuStatus ? 'nav-open' : 'nav-closed'}`}>
             <Link href="/" className="logo">
               <Image
-                src="/yoga-logo.png"
+                src="/fitness.png"
                 alt="Skydance Entertainment"
                 width={200}
                 height={100}
