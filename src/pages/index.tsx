@@ -15,7 +15,7 @@ const testimonials = [
     cite: '-Lynn M.'
   },
   {  
-    quote: 'We were lucky to find Wendy&rsquo;s in-person small group yoga class before covid hit and it&rsquo;s proven to be especially restorative and helpful as we continued with zoom classes since March 2020. Wendy carefully describes poses and movements, offers adaptations for folks with different abilities or injuries, and consistently cultivates a positive, caring space — a true feat on zoom and in-person.',
+    quote: "We were lucky to find Wendy's in-person small group yoga class before covid hit and it&rsquo;s proven to be especially restorative and helpful as we continued with zoom classes since March 2020. Wendy carefully describes poses and movements, offers adaptations for folks with different abilities or injuries, and consistently cultivates a positive, caring space — a true feat on zoom and in-person.",
     cite: 'Monique & Doug <br />Arlington, VA' 
   }
 ]
@@ -90,6 +90,77 @@ export default function Home() {
             )
           })}
           </Carousel>
+        </section>
+        <section className="split-column">
+          <div className="split-column__inner">
+            <div>
+              <Image
+                src="/bicep-up-close.jpg"
+                alt="bicep-up-close"
+                width={0}
+                height={0}
+                priority
+                sizes='100vw'
+                style={{ width: '100%', height: '60vh', objectFit: 'cover', objectPosition: 'top' }}
+              />
+              <p>Unleash your full potential with Wendy! Whether you&lsquo;re aiming for sculpted arms, increased strength, or overall fitness, Wendy is here to guide and support you every step of the way. Join us on this transformative journey and conquer your fitness goals like never before!</p>
+            </div>
+            <div>
+              <Image
+                src="/cropped-squat-jump.jpg"
+                alt="squat-jump"
+                width={0}
+                height={0}
+                priority
+                sizes='100vw'
+                style={{ width: '100%', height: '60vh', objectFit: 'cover', objectPosition: 'top' }}
+              />
+              <p>Reach new heights with Wendy! Watch in awe as our trainer showcases explosive power with dynamic squat jumps. Elevate your fitness game and unlock the full potential of your body. Join us today and experience the thrill of pushing your limits to achieve remarkable results!</p>
+            </div>
+          </div>
+        </section>
+        <section className="contact">
+          <div className="contact__inner">
+            <div className="contact__form">
+              <div>
+                <div className="contact__content">
+                  <h1>Ready to take your fitness journey to the next level?</h1>
+                  <p>Let&lsquo;s see what we can do together! Wendy is here to support you every step of the way. Whether you&lsquo;re aiming to build strength, shed those extra pounds, or simply lead a healthier lifestyle, we&lsquo;ve got you covered. Don&lsquo;t wait any longer; reach out to us now and let&lsquo;s embark on this transformative adventure together! Contact us today for a free consultation and let&lsquo;s get started on achieving your fitness goals. </p>
+                </div>
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                  <input type="hidden" name="access_key" value="b6588e96-7e0c-4c67-a826-5e4382aa7739" />
+                  <div>
+                    <div>
+                      <label htmlFor="name">Name</label>
+                      <input type="text" name="name" required />
+                    </div>
+                    <div>
+                      <label htmlFor="email">Email</label>
+                      <input type="email" name="email" required />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message">What are you looking for?</label>
+                    <textarea name="message" required></textarea>
+                  </div>
+                  <div className="h-captcha" data-captcha="true"></div>
+                  <button className="button" type="submit">Lets Get Fit</button>
+                </form>
+              </div>
+              <div>
+                <Image
+                  src="/db-punch.jpg"
+                  alt="Dumb Bell Punch"
+                  width={0}
+                  height={0}
+                  priority
+                  sizes='100vw'
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top' }}
+                />
+              </div> 
+            </div>
+          </div>
         </section>
       </main>
     </>

@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import '@styles/app.scss';
-import { Nanum_Gothic, Poppins } from 'next/font/google'
+import { Nanum_Gothic, Roboto } from 'next/font/google'
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
 
 const inter = Nanum_Gothic({ weight: "400", subsets: ['latin'] })
-const pop = Poppins({ weight: ["300", "500"], subsets: ['latin'] })
+const roboto = Roboto({ weight: ["400", "500"], subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${inter.style.fontFamily};
         }
         html body * {
-          font-family: ${pop.style.fontFamily};
+          font-family: ${roboto.style.fontFamily};
           font-weight: 200;
         }
       `}</style>

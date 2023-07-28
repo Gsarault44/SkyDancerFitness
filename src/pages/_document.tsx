@@ -9,6 +9,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <script src="https://web3forms.com/client/script.js" async defer></script>
       <body>
         <Main />
         <NextScript />
