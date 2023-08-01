@@ -17,7 +17,10 @@ button.button {
 
 
 .logo img {
+  display: block;
   filter: grayscale(1) brightness(3.5);
+  object-fit: cover;
+  margin-top: 6px;
 }
 
 .head-logo {
@@ -43,11 +46,10 @@ button.button {
 .header {
   padding: 0 1.5rem;
   width: 100%;
-  
   background-color: #000;
   @media all and (min-width: 575px) {
-
-    background-color: rgba(#000, 0.45);
+    height: auto;
+    background-color: rgba(#000, 1);
   }
 
   .menu-button {
@@ -67,15 +69,26 @@ button.button {
   }
 
   nav  {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
 
     @media all and (min-width: 575px) {
+      justify-content: space-between;
       flex-direction: row;
       height: auto;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media all and (min-width: 575px) {
+        flex-direction: row;
+      }
     }
 
     &.nav-open {

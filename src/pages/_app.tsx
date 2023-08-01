@@ -59,18 +59,18 @@ export default function App({ Component, pageProps }: AppProps) {
                 src="/fitness.png"
                 alt="Skydance Entertainment"
                 width={200}
-                height={100}
+                height={68}
                 priority
               />
             </Link>
-            <div>
-              <Link href="https://sky-dancer-fitness.vercel.app/">
-                Fitness
+            <div className="menu-items">
+              <Link href="https://sky-dancer-yoga.vercel.app/">
+                Yoga
               </Link>
               <Link href="https://sky-dancer.vercel.app/dance">
                 Entertainment
               </Link>
-              </div>
+            </div>
           </nav>
         </div>
       </header>
