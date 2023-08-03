@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import * as React  from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -22,6 +22,16 @@ const testimonials = [
 
 
 export default function Home() {
+  const [domLoaded, setDomLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
+  React.useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -37,6 +47,46 @@ export default function Home() {
     },
   };
 
+  React.useEffect(() => {
+  const config = {
+    root: null,
+    rootMargin: '0px',
+    threshold: [0.15, 0.2, 0.25, 0.3]
+  };
+  
+  let observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      const currentY = entry.boundingClientRect.y;
+      const currentRatio = entry.intersectionRatio;
+      const isIntersecting = entry.isIntersecting;
+      const element = entry.target;
+      element.classList.remove("outview-top", "inview-top", "inview-bottom", "outview-bottom");
+      if (isTopVisible(element) ){
+       element.classList.add('inview-top');
+      } else if (isBottomVisible(element) ) {
+       element.classList.add('inview-bottom');
+      }
+  
+    })
+  }, config);
+  
+  function isTopVisible(element) {
+   const elementTop = element.getBoundingClientRect().top;
+   const scrollTop = document.documentElement.scrollTop;
+   return ( scrollTop > elementTop);
+  }
+  
+  function isBottomVisible(element) {
+   const elementBottom = element.getBoundingClientRect().bottom;
+   const scrollBottom = document.documentElement.scrollTop + document.documentElement.clientHeight;
+   return (scrollBottom > elementBottom);
+  }
+  
+  const viewbox = document.querySelectorAll('.viewme');
+  viewbox.forEach(image => {
+    observer.observe(image);
+  });
+}, []);
   return (
     <>
       <Head>
@@ -93,7 +143,7 @@ export default function Home() {
         </section>
         <section className="split-column">
           <div className="split-column__inner">
-            <div>
+            <div className='viewme'>
               <Image
                 src="/bicep-up-close.jpg"
                 alt="bicep-up-close"
@@ -105,7 +155,7 @@ export default function Home() {
               />
               <p>Unleash your full potential with Wendy! Whether you&lsquo;re aiming for sculpted arms, increased strength, or overall fitness, Wendy is here to guide and support you every step of the way. Join us on this transformative journey and conquer your fitness goals like never before!</p>
             </div>
-            <div>
+            <div className="viewme">
               <Image
                 src="/cropped-squat-jump.jpg"
                 alt="squat-jump"
@@ -119,6 +169,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {domLoaded && (
         <section className="contact">
           <div className="contact__inner">
             <div className="contact__form">
@@ -161,7 +212,7 @@ export default function Home() {
               </div> 
             </div>
           </div>
-        </section>
+        </section>)}
       </main>
     </>
   )

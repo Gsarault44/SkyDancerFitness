@@ -184,7 +184,7 @@
     grid-gap: 2rem;
     max-width: 867px;
     margin: 0 auto;
-    border: 1px solid #000;
+    border: 1px solid #939597;
     border-radius: 10px;
 
     div {
@@ -231,4 +231,24 @@
     }
    }
   }
+}
+
+.viewme {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .53s ease;
+}
+
+.inview-top, .inview-bottom {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outview-top {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.outview-bottom {
+  opacity: 0;
+  transform: translateY(20px);
 }
