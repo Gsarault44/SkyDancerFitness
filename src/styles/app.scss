@@ -118,9 +118,11 @@ button.button {
       background-color: transparent;
       transition: all 0.34s ease-in-out;
       color: #fff;
+      text-transform: uppercase;
 
       &:hover {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #e71d36;
+        color: #e71d36;
       }
     }
     a.logo {
