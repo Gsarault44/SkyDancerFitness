@@ -70,13 +70,13 @@ export default function Home() {
     })
   }, config);
   
-  function isTopVisible(element) {
+  function isTopVisible(element: Element) {
    const elementTop = element.getBoundingClientRect().top;
    const scrollTop = document.documentElement.scrollTop;
    return ( scrollTop > elementTop);
   }
   
-  function isBottomVisible(element) {
+  function isBottomVisible(element: Element) {
    const elementBottom = element.getBoundingClientRect().bottom;
    const scrollBottom = document.documentElement.scrollTop + document.documentElement.clientHeight;
    return (scrollBottom > elementBottom);
