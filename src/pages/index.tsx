@@ -13,10 +13,6 @@ const testimonials = [
   {
     quote: 'My yoga teacher and personal trainer for many years, Wendy has a remarkable ability to pinpoint problems and come up with exercises to address them.  Her attention to detail and empathetic nature make her a particularly effective yoga teacher.  She is personable and professional.  She has been a great advisor on all things physical and an engaging friend as well.',
     cite: '-Lynn M.'
-  },
-  {  
-    quote: "We were lucky to find Wendy's in-person small group yoga class before covid hit and it&rsquo;s proven to be especially restorative and helpful as we continued with zoom classes since March 2020. Wendy carefully describes poses and movements, offers adaptations for folks with different abilities or injuries, and consistently cultivates a positive, caring space — a true feat on zoom and in-person.",
-    cite: 'Monique & Doug <br />Arlington, VA' 
   }
 ]
 
@@ -98,7 +94,7 @@ export default function Home() {
       <main className="home fitness">
         <section className="hero">
           <Image
-            src="/scissor-jump-no-shoelace.jpg"
+            src="/scissor-jump-no-shoelace.png"
             alt="scissor-jump-no-shoelace"
             width={0}
             height={0}
@@ -111,7 +107,7 @@ export default function Home() {
         <section className="split-media">
           <div className="split-media__content">
             <h2>Meet Wendy </h2>
-            <p>Your Dedicated & Creative Trainer. Tailoring workouts to your unique needs, she brings a diverse skillset to every session. Let her guide you on a transformative fitness journey.</p>
+            <p>Your dedicated & creative trainer. Tailoring workouts to your unique needs, she brings a diverse skillset to every session. Let her guide you on a transformative fitness journey.</p>
           </div>
           <Image
             src="/kick-and-punch-jump.jpg"
