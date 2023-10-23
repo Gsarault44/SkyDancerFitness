@@ -172,7 +172,7 @@ export default function Home() {
               <div>
                 <div className="contact__content">
                   <h1>Ready to take your fitness journey to the next level?</h1>
-                  <p>Let&lsquo;s see what we can do together! Wendy is here to support you every step of the way. Whether you&lsquo;re aiming to build strength, shed those extra pounds, or simply lead a healthier lifestyle, we&lsquo;ve got you covered. Don&lsquo;t wait any longer; reach out to us now and let&lsquo;s embark on this transformative adventure together! Contact us today for a free consultation and let&lsquo;s get started on achieving your fitness goals. </p>
+                  <p>My training philosophy is to create a holistic training program that pulls from all facets of fitness for a customized program for each client. I have trained in everything from Pilates and Yoga to Crossfit, I pull exercises from every area of fitness to tailor the workout to each individual.  I love helping clients who are coming off an injury or out of physical therapy. I enjoy helping my clients out of pain and into fitness.</p> 
                 </div>
                 <form action="https://api.web3forms.com/submit" method="POST">
 
