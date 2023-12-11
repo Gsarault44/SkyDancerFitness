@@ -244,6 +244,17 @@
   }
 }
 
+.clip-champ {
+  iframe {
+    min-height: 400px;
+    max-width: 100%;
+    border: 0;
+    @media all and (min-width: 575px) {
+      min-height: 800px;
+    }
+  }
+}
+
 .viewme {
   opacity: 0;
   transform: translateY(20px);

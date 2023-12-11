@@ -196,7 +196,7 @@ export default function Home() {
                 </form>
               </div>
               <div>
-                <Image
+                {/* <Image
                   src="/db-punch.jpg"
                   alt="Dumb Bell Punch"
                   width={0}
@@ -204,7 +204,10 @@ export default function Home() {
                   priority
                   sizes='100vw'
                   style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'top' }}
-                />
+                /> */}
+                <div className="clip-champ">
+                  <iframe allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed" width="640" height="360"></iframe>
+                </div>
               </div> 
             </div>
           </div>
