@@ -13,6 +13,10 @@ const testimonials = [
   {
     quote: 'My yoga teacher and personal trainer for many years, Wendy has a remarkable ability to pinpoint problems and come up with exercises to address them.  Her attention to detail and empathetic nature make her a particularly effective yoga teacher.  She is personable and professional.  She has been a great advisor on all things physical and an engaging friend as well.',
     cite: '-Lynn M.'
+  },
+  {
+    quote: '"Wendy has taught me how to exercise smarter and helped me make lifestyle changes, she explains the reasoning behind each exercise and has helped me integrate exercise into my daily routine."',
+    cite: '-Sam'
   }
 ]
 
@@ -94,12 +98,14 @@ export default function Home() {
       <main className="home fitness">
         <section className="hero">
           <Image
-            src="/scissor-jump-no-shoelace.png"
+            src="/scissor-jump-no-shoelace.jpg"
             alt="scissor-jump-no-shoelace"
             width={0}
             height={0}
             priority
             sizes='100vw'
+            blurDataURL="/scissor-jump-no-shoelace.jpg"
+            placeholder="blur"
             style={{ width: '100%', height: '100vh', objectFit: 'cover' }}
           />
           <h1>Transform Your Body, Transform Your Life.</h1>
@@ -126,6 +132,8 @@ export default function Home() {
             transitionDuration={1000}
             arrows={true}
             infinite={true}
+            autoPlay
+            autoPlaySpeed={7500}
           >
           {testimonials.map((testimonial, index) => {
             return (
@@ -165,7 +173,7 @@ export default function Home() {
             </div>*/}
           </div> 
           <div className="clip-champ">
-            <iframe allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed" width="640" height="360"></iframe>
+            <iframe allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed?loop=1" width="640" height="360"></iframe>
           </div>
         </section>
         {domLoaded && (
