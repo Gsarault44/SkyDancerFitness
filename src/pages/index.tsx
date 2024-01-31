@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import emailjs from '@emailjs/browser';
 
 
 const testimonials = [
@@ -20,6 +21,96 @@ const testimonials = [
   }
 ]
 
+const isEmail = (email: string) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+export const ContactUs = () => {
+  const [errors, setErrors] = React.useState(false);
+  const [thanks, setThanks] = React.useState(false);
+  const validateAndSubmitForm = (e: any) => {
+
+ 
+    if (!isEmail(e)) {
+      setErrors(true);
+    }
+    
+    if (isEmail(e)) {
+      setErrors(false);
+    }
+    console.log(errors, e)
+  };
+  
+  const form = React.useRef() as React.MutableRefObject<HTMLFormElement>;
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const input1 = form.current[0] as HTMLInputElement
+    const input2 = form.current[1] as HTMLInputElement 
+    const input3 = form.current[2] as HTMLInputElement
+    if(input1.value.length > 0 && input2.value.length > 0 && input3.value.length > 0) {
+      setThanks(true);
+      emailjs.sendForm('service_yz0e3ad', 'template_mlghmfv', form.current, 'SgPX_lb0_LriOGFYT')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        }
+      );
+    }
+  };
+
+  const closeModal = () => {
+    form.current.reset();
+    setThanks(false)
+  }
+
+  return (
+    <>
+      {thanks && (
+        <div className="modal-wrapper">
+          <div className="catcher" onClick={closeModal}></div>
+          <div className="modal-small">
+            <span className="close" onClick={closeModal}>X</span>
+            <h2>Thank you!</h2>
+            <p>We will be in touch soon</p>
+          </div>
+        </div>
+      )}
+      <form ref={form} onSubmit={e => sendEmail(e)} className='booking-form'>
+        <div className="form-flex">
+          <div>
+            <label htmlFor="name" className="booking-name-label">Name</label>
+            <input
+              id="name"
+              placeholder='Full Name'
+              type="text"
+              name="user_name"
+              onChange={() => {}}
+            />
+          </div>
+          <div className={errors ? 'error' : 'good'}>
+            <label htmlFor="email" className="booking-email-label">Email</label>
+            <input
+              id="email"
+              placeholder='email@email.com'
+              type="email"
+              name="user_email"
+              onBlur={(e) => validateAndSubmitForm(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="form-message">
+          <label htmlFor="message">What are you looking for?</label>
+          <textarea
+            id="message"
+            placeholder='I need intense training'
+            name="message"
+            onChange={() => {}}
+          />
+        </div>
+        <input className="button" type="submit" value="Lets Get Fit" />
+      </form>
+    </>
+  );
+};
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = React.useState(false);
@@ -173,7 +264,7 @@ export default function Home() {
             </div>*/}
           </div> 
           <div className="clip-champ">
-            <iframe allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed?loop=1" width="640" height="360"></iframe>
+            <iframe title="clipchamp" allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed?loop=1"></iframe>
           </div>
         </section>
         {domLoaded && (
@@ -185,26 +276,7 @@ export default function Home() {
                   <h1>Ready to take your fitness journey to the next level?</h1>
                   <p>My training philosophy is to create a holistic training program that pulls from all facets of fitness for a customized program for each client. I have trained in everything from Pilates and Yoga to Crossfit, I pull exercises from every area of fitness to tailor the workout to each individual.  I love helping clients who are coming off an injury or out of physical therapy. I enjoy helping my clients out of pain and into fitness.</p> 
                 </div>
-                <form action="https://api.web3forms.com/submit" method="POST">
-
-                  <input type="hidden" name="access_key" value="b6588e96-7e0c-4c67-a826-5e4382aa7739" />
-                  <div>
-                    <div>
-                      <label htmlFor="name">Name</label>
-                      <input type="text" name="name" required />
-                    </div>
-                    <div>
-                      <label htmlFor="email">Email</label>
-                      <input type="email" name="email" required />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="message">What are you looking for?</label>
-                    <textarea name="message" required></textarea>
-                  </div>
-                  <div className="h-captcha" data-captcha="true"></div>
-                  <button className="button" type="submit">Lets Get Fit</button>
-                </form>
+                <ContactUs />
               </div>
               <div>
                 <Image

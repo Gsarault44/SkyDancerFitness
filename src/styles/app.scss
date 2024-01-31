@@ -47,6 +47,9 @@ button.button {
   padding: 0 1.5rem;
   width: 100%;
   background-color: #1c1c1c;
+  position: fixed;
+  top: 0;
+  z-index: 999;
   @media all and (min-width: 575px) {
     height: auto;
     background-color: #1c1c1c;
