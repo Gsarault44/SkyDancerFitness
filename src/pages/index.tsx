@@ -47,7 +47,7 @@ export const ContactUs = () => {
     const input3 = form.current[2] as HTMLInputElement
     if(input1.value.length > 0 && input2.value.length > 0 && input3.value.length > 0) {
       setThanks(true);
-      emailjs.sendForm('service_yz0e3ad', 'template_mlghmfv', form.current, 'SgPX_lb0_LriOGFYT')
+      emailjs.sendForm('service_yz0e3ad', 'template_7nogb9a', form.current, 'SgPX_lb0_LriOGFYT')
         .then((result) => {
             console.log(result.text);
         }, (error) => {
