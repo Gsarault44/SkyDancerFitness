@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Head from "next/head";
 import '@styles/app.scss';
 import { Nanum_Gothic, Roboto } from 'next/font/google'
 import { useRouter } from 'next/router';
@@ -33,6 +34,22 @@ export default function App({ Component, pageProps }: AppProps) {
           font-weight: 200;
         }
       `}</style>
+      <Head>
+        <meta name="description" content="Transform Your Body, Transform Your Life."/>
+
+        <meta property="og:url" content="https://sky-dancer-fitness.vercel.app/"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="SkyDancer Fitness"/>
+        <meta property="og:description" content="Transform Your Body, Transform Your Life."/>
+        <meta property="og:image" content="/scissor-jump-no-shoelace.jpg"/>
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="sky-dancer-fitness.vercel.app"/>
+        <meta property="twitter:url" content="https://sky-dancer-fitness.vercel.app/"/>
+        <meta name="twitter:title" content="SkyDancer Fitness"/>
+        <meta name="twitter:description" content="Transform Your Body, Transform Your Life."/>
+        <meta name="twitter:image" content="/scissor-jump-no-shoelace.jpg"/>
+      </Head>
       <header className={`header ${router.pathname == '/' && 'home'}`}>
         <div>
           <div className="menu-button">
