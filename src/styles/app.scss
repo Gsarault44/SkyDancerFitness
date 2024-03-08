@@ -54,6 +54,34 @@ button.button {
     height: auto;
     background-color: #1c1c1c;
   }
+  .ent {
+    border-bottom: 0;
+    padding: 0;
+    &:hover {
+      border-bottom: 0;
+      
+      img {
+        mix-blend-mode: overlay;  
+      }
+    }
+    img {
+      display: block;
+      filter: grayscale(1) brightness(3.5);
+      object-fit: contain;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  .yoga {
+    border-bottom: 0;
+    padding: 0;
+    &:hover {
+      border-bottom: 0;
+      img {
+        mix-blend-mode: overlay;  
+      }
+    }
+  }
 
   .menu-button {
     position: fixed;
