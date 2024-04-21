@@ -236,9 +236,9 @@ export default function Home() {
           })}
           </Carousel>
         </section>
-        <section className="split-column">
+        {/* <section className="split-column">
           <div className="split-column__inner">
-            {/* <div className='viewme'>
+            <div className='viewme'>
               <Image
                 src="/bicep-up-close.jpg"
                 alt="bicep-up-close"
@@ -261,12 +261,12 @@ export default function Home() {
                 style={{ width: '100%', height: '60vh', objectFit: 'cover', objectPosition: 'top' }}
               />
               <p>Reach new heights with Wendy! Watch in awe as our trainer showcases explosive power with dynamic squat jumps. Elevate your fitness game and unlock the full potential of your body. Join us today and experience the thrill of pushing your limits to achieve remarkable results!</p>
-            </div>*/}
+            </div>
           </div> 
           <div className="clip-champ">
             <iframe title="clipchamp" allow="autoplay;" allowFullScreen src="https://clipchamp.com/watch/flno9X0Q0RH/embed?loop=1"></iframe>
           </div>
-        </section>
+        </section> */}
         {domLoaded && (
         <section className="contact">
           <div className="contact__inner">
