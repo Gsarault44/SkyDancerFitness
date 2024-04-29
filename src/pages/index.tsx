@@ -205,6 +205,7 @@ export default function Home() {
           <div className="split-media__content">
             <h2>Meet Wendy </h2>
             <p>Your dedicated & creative trainer. Tailoring workouts to your unique needs, she brings a diverse skillset to every session. Let her guide you on a transformative fitness journey.</p>
+            <a className="button" href="https://app.acuityscheduling.com/catalog.php?owner=19156776&category=Personal+Training">Purchase Personal Training</a>
           </div>
           <Image
             src="/kick-and-punch-jump.jpg"
