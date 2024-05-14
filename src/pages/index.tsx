@@ -70,7 +70,7 @@ export const ContactUs = () => {
           <div className="modal-small">
             <span className="close" onClick={closeModal}>X</span>
             <h2>Thank you!</h2>
-            <p>We will be in touch soon</p>
+            <p>I will be in touch soon</p>
           </div>
         </div>
       )}
