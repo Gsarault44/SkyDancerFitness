@@ -89,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   height={60}
                 />
               </Link>
-              <Link href="skydancerentertainment.com/dance" className="ent">
+              <Link href="https://www.skydancerentertainment.com/dance" className="ent">
                 <Image
                   src="/logo.png"
                   alt="SkyDancer Entertainment"
