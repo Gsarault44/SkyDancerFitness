@@ -24,15 +24,15 @@ button.button {
   padding: 28px;
   border-radius: 3px;
   box-shadow: 0 0 8px -3px #000;
-  z-index: 99999;
-  display: flex;
+  z-index: 99999999;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   display: none;
   text-align: center;
   color: #fff;
-  max-width: 450px;
+  width: 450px;
+  max-width: 100%;
 
   p {
     font-size: 20px;
